@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Lokasi
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Lokasi\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Lokasi()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Lokasi\r\n
+comment2.params=x_coord\ y_coord\ deskripsiLokasi
+comment2.target=Lokasi(float,\ float,\ java.lang.String)
+comment3.params=
+comment3.target=float\ getX()
+comment4.params=
+comment4.target=float\ getY()
+comment5.params=
+comment5.target=java.lang.String\ getDeskripsi()
+comment6.params=x_coord
+comment6.target=void\ setX(float)
+comment7.params=y_coord
+comment7.target=void\ setY(float)
+comment8.params=deskripsi
+comment8.target=void\ setDeskripsi(java.lang.String)
+comment9.params=
+comment9.target=void\ printData()
+numComments=10

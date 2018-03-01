@@ -1,19 +1,27 @@
-
+/**
+ * Class ini merupakan class Lokasi
+ *
+ * @author Muhammad Farhan
+ * @version 01-03-2018
+ */
 public class Customer
 {
-    // instance variables - replace the example below with your own
     protected int id;
     protected String nama;
     
-    public Customer( int i, String n)
+    public Customer( int id, String nama)
     {
-     id = i;
-     nama = n;
+        this.nama = nama;
+        this.id = id;
     }
     
+    /**
+     * merupakan method untuk mendapatkan nilai dari id
+     * @return id
+     */
     public int getID()
     {
-        return 0;
+        return id;
     }
     
     public String getNama()
@@ -21,14 +29,24 @@ public class Customer
         return nama;
     }
     
-    public void setID(int i2)
+    public void setID(int id)
     {
-        id = i2;
+        this.id = id;
     }
     
-    public void setNama(String n2)
+    public void setNama(String nama)
     {
-        nama = n2;
+        /*
+         * ini digunakan untuk mengganti nilai dari nama
+         * nilai nama tersebut ber-type String
+         */
+        this.nama = nama;
+    }
+    
+    public void printData()
+    {
+        //digunakan untuk mencetak nama
+        System.out.println("Nama :" + nama);
     }
 }
 
