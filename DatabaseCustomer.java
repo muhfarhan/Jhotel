@@ -1,10 +1,20 @@
-
-
+/**
+ * Class ini merupakan class Pesanan
+ *
+ * @author Muhammad Farhan
+ * @version 01-03-2018
+ */
 public class DatabaseCustomer
 {
     private String[] list_customer;
     
-    public boolean addCustomer(Customer baru)
+    /**
+     * merupakan method untuk menginisialisasi nilai dari
+     * baru yang bersala dari customer
+     * @param baru
+     * @return false
+     */
+    public static boolean addCustomer(Customer baru)
     {
         return false;
     }

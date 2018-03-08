@@ -12,7 +12,19 @@ public class Pesanan
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
+    private Room kamar;
     
+    public Pesanan()
+    {
+        
+    }
+    
+    /**
+     * merupakan method untuk menginisialisasi nilai dari
+     * biaya dan pelanggan
+     * @param biaya
+     * @param pelanggan
+     */
     public Pesanan(double biaya, Customer pelanggan)
     {
         this.biaya = biaya;
@@ -94,6 +106,11 @@ public class Pesanan
     public void setStatusSelesai(boolean diproses)
     {
         isSelesai = diproses;
+    }
+    
+    public void setRoom(Room kamar)
+    {
+    
     }
     
     /**

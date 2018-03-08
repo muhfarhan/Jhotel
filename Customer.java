@@ -9,6 +9,17 @@ public class Customer
     protected int id;
     protected String nama;
     
+    public Customer()
+    {
+        
+    }
+       
+    /**
+     * merupakan method untuk menginisialisasi nilai dari 
+     * id dan nama
+     * @param id
+     * @param nama
+     */
     public Customer( int id, String nama)
     {
         this.nama = nama;
@@ -24,16 +35,28 @@ public class Customer
         return id;
     }
     
+    /**
+     * merupakan method untuk mendapatkan nilai dari nama
+     * @return nama
+     */
     public String getNama()
     {
         return nama;
     }
     
+    /**
+     * merupakan method untuk mengatur nilai dari id
+     * @param id
+     */
     public void setID(int id)
     {
         this.id = id;
     }
     
+    /**
+     * merupakan method untuk mengatur nilai dari nama
+     * @param nama
+     */
     public void setNama(String nama)
     {
         /*
@@ -43,6 +66,9 @@ public class Customer
         this.nama = nama;
     }
     
+    /**
+     * merupakan method untuk mencetak data
+     */
     public void printData()
     {
         //digunakan untuk mencetak nama

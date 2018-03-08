@@ -14,6 +14,18 @@ public class Hotel
     /**
      * Constructor dari objects class Hotel
      */
+    public Hotel()
+    {
+        
+    }
+    
+    /**
+     * merupakan method untuk menginisialisasi nilai dari
+     * nama, lokasi dan bintang
+     * @param nama
+     * @param lokasi
+     * @param bintang
+     */
     public Hotel(String nama, Lokasi lokasi, int bintang)
     {
        this.nama = nama;

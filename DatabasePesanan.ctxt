@@ -2,10 +2,13 @@
 comment0.target=DatabasePesanan
 comment1.params=baru
 comment1.target=boolean\ addPesanan(Pesanan)
+comment1.text=merupakan\ method\ untuk\ memasukkan\ nilai\ dari\ pesanan\r\n\ @param\ baru\r\n\ return\ false\r\n
 comment2.params=pesan
 comment2.target=boolean\ removePesanan(Pesanan)
+comment2.text=\r\n\ merupakan\ method\ untuk\ menghilangkan\ nilai\ dari\ pesanan\r\n\ @return\ false\r\n
 comment3.params=cust
 comment3.target=Pesanan\ getPesanan(Customer)
+comment3.text=\r\n\ merupakan\ method\ untuk\ membuat\ object\ pesan\ yang\ baru\r\n\ @param\ cust\r\n\ @return\ pesan\r\n
 comment4.params=
 comment4.target=java.lang.String[]\ getPesananDatabase()
 comment5.params=pesan
