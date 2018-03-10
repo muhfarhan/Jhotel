@@ -97,7 +97,9 @@ public class Lokasi
      */
     public void printData()
     {
-        //digunakan untuk mencetak lokasi
-        System.out.println("Deskripsi :" + deskripsiLokasi);
+        //digunakan untuk mencetak nilai yang diinginkan
+        System.out.println("Koordinat X     : " + x_coord);
+        System.out.println("Koordinat Y     : " + y_coord);
+        System.out.println("Deskripsi Lokasi: " + deskripsiLokasi);
     }
 }

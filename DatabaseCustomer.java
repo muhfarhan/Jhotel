@@ -6,7 +6,7 @@
  */
 public class DatabaseCustomer
 {
-    private String[] list_customer;
+    private static String[] list_customer;
     
     /**
      * merupakan method untuk menginisialisasi nilai dari
@@ -19,12 +19,12 @@ public class DatabaseCustomer
         return false;
     }
     
-    public boolean removeCustomer(int id)
+    public static boolean removeCustomer(int id)
     {
         return false;
     }
     
-    public String[] getCustomerDatabase()
+    public static String[] getCustomerDatabase()
     {
         return list_customer;
     }

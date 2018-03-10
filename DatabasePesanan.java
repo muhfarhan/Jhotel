@@ -1,7 +1,7 @@
 
 public class DatabasePesanan
 {
-    private String[] list_pesanan;
+    private static String[] list_pesanan;
     
     /**merupakan method untuk memasukkan nilai dari pesanan
      * @param baru
@@ -19,7 +19,7 @@ public class DatabasePesanan
      * merupakan method untuk menghilangkan nilai dari pesanan
      * @return false
      */
-    public boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan)
     {
         return false;
     }
@@ -29,19 +29,19 @@ public class DatabasePesanan
      * @param cust
      * @return pesan
      */
-    public Pesanan getPesanan(Customer cust)
+    public static Pesanan getPesanan(Customer cust)
     {
         Pesanan pesan = new Pesanan();
         return pesan;
     }
     
     
-    public String[] getPesananDatabase()
+    public static String[] getPesananDatabase()
     {
         return list_pesanan;
     }
     
-    public void pesananDibatalkan(Pesanan pesan)
+    public static void pesananDibatalkan(Pesanan pesan)
     {
         
     }

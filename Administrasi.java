@@ -14,41 +14,65 @@ public class Administrasi
     {
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(true);
+        pesan.setRoom(kamar);
+        
+        roomAmbilPesanan(pesan, kamar);
     }
 
     public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
     {
-        kamar.setStatusKamar("Booked");
+        kamar.setStatusKamar(StatusKamar.Booked);
         kamar.setPesanan(pesan);
     }
     
     public static void roomLepasPesanan(Room kamar)
     {
-        kamar.setStatusKamar("Vacant");
+        kamar.setStatusKamar(StatusKamar.Vacant);
         kamar.setPesanan(null);
     }
     
     public static void pesananDibatalkan(Room kamar)
     {
-        kamar.getPesanan.setStatusSelesai(false);
-        kamar.getPesanan.setStatusDiproses(false);
-        kamar.setPesanan(null);
+        /* kamar.pesan.setStatusSelesai(false); 
+         * tidak bisa dilakukan karena pesan merupakan private
+         * object milik class Room*/
+        Pesanan wait = new Pesanan();
+        wait = kamar.getPesanan();
+        wait.setStatusSelesai(false);
+        wait.setStatusDiproses(false);
+        wait.setRoom(null);
+        kamar.setPesanan(wait);
+        
+        roomLepasPesanan(kamar);
     }
     
     public static void pesananSelesai(Room kamar)
     {
-        kamar.getPesanan.setStatusSelesai(true);
-        kamar.getPesanan.setStatusDiperoses(false);
+        Pesanan wait = new Pesanan();
+        wait = kamar.getPesanan();
+        wait.setStatusSelesai(true);
+        wait.setStatusDiproses(false);
+        wait.setRoom(null);
+        kamar.setPesanan(wait);
         
+        roomLepasPesanan(kamar); 
     }
     
     public static void pesananDibatalkan(Pesanan pesan)
     {
+        roomLepasPesanan(pesan.getRoom());
         
+        pesan.setStatusSelesai(false);
+        pesan.setStatusDiproses(false);
+        pesan.setRoom(null);
     }
     
     public static void pesananSelesai(Pesanan pesan)
     {
-        
+        roomLepasPesanan(pesan.getRoom());
+
+        pesan.setStatusSelesai(true);
+        pesan.setStatusDiproses(false);
+        pesan.setRoom(null);
     }
 }

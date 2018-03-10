@@ -71,8 +71,9 @@ public class Customer
      */
     public void printData()
     {
-        //digunakan untuk mencetak nama
-        System.out.println("Nama :" + nama);
+        //digunakan untuk mencetak nilai yang diinginkan
+        System.out.println("ID   : " + id);
+        System.out.println("Nama : " + nama);
     }
 }
 

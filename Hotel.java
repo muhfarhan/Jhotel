@@ -75,7 +75,7 @@ public class Hotel
      */
     public void setLokasi(Lokasi lokasi)
     {
-        this.lokasi = lokasi;
+         this.lokasi = lokasi;
     }
     
     /**merupakan method untuk memasukkan nilai dari bintang
@@ -91,7 +91,9 @@ public class Hotel
      */
     public void printData()
     {
-        //digunakan untuk mencetak nama
-        System.out.println("Nama :" + nama);
+        //digunakan untuk mencetak nilai yang diinginkan
+        System.out.println("Nama Hotel : " + nama);
+        System.out.println("Lokasi     : " + lokasi.getDeskripsi());
+        System.out.println("Bintang    : " + bintang);
     }
 }

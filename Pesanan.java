@@ -9,7 +9,7 @@ public class Pesanan
     private double biaya;
     private Customer pelanggan;
     private String nama_pelanggan;
-    private String jenis_kamar;
+    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
@@ -29,6 +29,7 @@ public class Pesanan
     {
         this.biaya = biaya;
         this.pelanggan = pelanggan;
+        nama_pelanggan = pelanggan.getNama();
     }
     
     /**
@@ -49,6 +50,16 @@ public class Pesanan
         return pelanggan;
     }
     
+    public String getNamaPelanggan()
+    {
+        return nama_pelanggan;
+    }
+    
+    public TipeKamar getTipeKamar()
+    {
+        return tipe_kamar;
+    }
+    
     /**
      * merupakan method untuk mendapatkan nilai dari StatusDiproses
      * @return false
@@ -67,6 +78,11 @@ public class Pesanan
         return false;
     }
     
+    public Room getRoom()
+    {
+        return kamar;
+    }
+    
     /**
      * merupakan method untuk memasukkan nilai dari biaya
      * @param biaya
@@ -80,14 +96,24 @@ public class Pesanan
      * merupakan method untuk memasukkan nilai dari pelanggan
      * @param baru
      */
-    public void setPelanggan(Customer baru)
+    public void setPelanggan(Customer pelanggan)
     {
         /*
          * digunakan untuk mengganti nilai dari pelanggan
          * nilai tersebut didapatkan dari customer
          * dengan menggunakan paramter baru
          */
-        pelanggan = baru;
+        this.pelanggan = pelanggan;
+    }
+    
+    public void setNamaPelanggan(String nama_pelanggan)
+    {
+        this.nama_pelanggan = nama_pelanggan;
+    }
+    
+    public void setTipeKamar(TipeKamar tipe_kamar)
+    {
+        this.tipe_kamar = tipe_kamar;
     }
     
     /**
@@ -103,14 +129,14 @@ public class Pesanan
      * merupakan method untuk memasukkan nilai dari StatusSelesai
      * @param diproses
      */
-    public void setStatusSelesai(boolean diproses)
+    public void setStatusSelesai(boolean selesai)
     {
-        isSelesai = diproses;
+        isSelesai = selesai;
     }
     
     public void setRoom(Room kamar)
     {
-    
+        this.kamar = kamar;
     }
     
     /**
@@ -119,7 +145,10 @@ public class Pesanan
     public void printData()
     {
         //digunakan untuk mencetak biaya
-        System.out.println("Biaya :" + biaya);
+        System.out.println("Nama Pelanggan : " + nama_pelanggan);
+        System.out.println("Tipe Kamar     : " + tipe_kamar);
+        System.out.println("Status Diproses: " + isDiproses);
+        System.out.println("Status Selesai : " + isSelesai);
     }
     
 }
