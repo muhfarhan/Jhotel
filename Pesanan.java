@@ -7,9 +7,8 @@
 public class Pesanan
 {
     private double biaya;
+    private double jumlahHari;
     private Customer pelanggan;
-    private String nama_pelanggan;
-    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
@@ -25,11 +24,13 @@ public class Pesanan
      * @param biaya
      * @param pelanggan
      */
-    public Pesanan(double biaya, Customer pelanggan)
+    public Pesanan(double jumlahHari, Customer pelanggan,
+    Room kamar)
     {
-        this.biaya = biaya;
+        this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
-        nama_pelanggan = pelanggan.getNama();
+        this.kamar = kamar;
+        this.biaya = (kamar.dailyTariff*jumlahHari);
     }
     
     /**
@@ -41,6 +42,11 @@ public class Pesanan
         return biaya;
     }
     
+    public double getJumlahHari()
+    {
+        return jumlahHari;
+    }
+    
     /**
      * merupakan method untuk mendapatkan nilai dari biaya
      * @return biaya
@@ -48,16 +54,6 @@ public class Pesanan
     public Customer getPelanggan()
     {
         return pelanggan;
-    }
-    
-    public String getNamaPelanggan()
-    {
-        return nama_pelanggan;
-    }
-    
-    public TipeKamar getTipeKamar()
-    {
-        return tipe_kamar;
     }
     
     /**
@@ -89,7 +85,12 @@ public class Pesanan
      */
     public void setBiaya(double biaya)
     {
-        this.biaya = biaya;   
+        this.biaya = (kamar.dailyTariff*jumlahHari);   
+    }
+    
+    public void setJumlahHari(double jumlahHari)
+    {
+        this.jumlahHari = jumlahHari;
     }
     
     /**
@@ -104,16 +105,6 @@ public class Pesanan
          * dengan menggunakan paramter baru
          */
         this.pelanggan = pelanggan;
-    }
-    
-    public void setNamaPelanggan(String nama_pelanggan)
-    {
-        this.nama_pelanggan = nama_pelanggan;
-    }
-    
-    public void setTipeKamar(TipeKamar tipe_kamar)
-    {
-        this.tipe_kamar = tipe_kamar;
     }
     
     /**
@@ -145,10 +136,11 @@ public class Pesanan
     public void printData()
     {
         //digunakan untuk mencetak biaya
-        System.out.println("Nama Pelanggan : " + nama_pelanggan);
-        System.out.println("Tipe Kamar     : " + tipe_kamar);
+        System.out.println("Nama Pelanggan : " + pelanggan);
         System.out.println("Status Diproses: " + isDiproses);
         System.out.println("Status Selesai : " + isSelesai);
+        System.out.println("Jumlah Hari    : " + jumlahHari);
+        System.out.println("Biaya Total    : " + biaya);
     }
     
 }
