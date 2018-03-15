@@ -136,7 +136,7 @@ public class Pesanan
     public void printData()
     {
         //digunakan untuk mencetak biaya
-        System.out.println("Nama Pelanggan : " + pelanggan);
+        System.out.println("Nama Pelanggan : " + pelanggan.getNama());
         System.out.println("Status Diproses: " + isDiproses);
         System.out.println("Status Selesai : " + isSelesai);
         System.out.println("Jumlah Hari    : " + jumlahHari);
