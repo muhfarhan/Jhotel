@@ -24,11 +24,16 @@ public class Customer
      * @param id
      * @param nama
      */
-    public Customer( int id, String nama)//, Date dob)
+    public Customer( int id, String nama, int Tahun, int Bulan, int Tanggal)
     {
         this.nama = nama;
         this.id = id;
-        //this.dob = dob;
+        Date dob = new Date(Tahun,Bulan,Tanggal);
+    }
+    
+    public Customer(Date dob)
+    {
+        
     }
     
     /**
