@@ -86,6 +86,11 @@ public class Hotel
         this.bintang = bintang;
     }
     
+    public String toString()
+    {
+       return null; 
+    }
+    
     /**
      * merupakan method untuk mencetak nilai
      */

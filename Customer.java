@@ -4,10 +4,14 @@
  * @author Muhammad Farhan
  * @version 01-03-2018
  */
+import java.util.*;
+import java.util.regex.*;
 public class Customer
 {
     protected int id;
     protected String nama;
+    protected String email;
+    protected Date dob;
     
     public Customer()
     {
@@ -20,10 +24,11 @@ public class Customer
      * @param id
      * @param nama
      */
-    public Customer( int id, String nama)
+    public Customer( int id, String nama)//, Date dob)
     {
         this.nama = nama;
         this.id = id;
+        //this.dob = dob;
     }
     
     /**
@@ -42,6 +47,16 @@ public class Customer
     public String getNama()
     {
         return nama;
+    }
+    
+    public String getEmail()
+    {
+        return email;
+    }
+    
+    public Date getDOB()
+    {
+        return dob;
     }
     
     /**
@@ -64,6 +79,30 @@ public class Customer
          * nilai nama tersebut ber-type String
          */
         this.nama = nama;
+    }
+    
+    public void setEmail(String email)
+    {
+        String pattern ="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        Pattern pat = Pattern.compile(pattern);
+        Matcher mat = pat.matcher(email);
+	
+        if (mat.matches())
+        {
+            this.email = email;
+        }
+    }
+    
+    
+    public void setDOB(Date dob)
+    {
+        this.dob = dob;
+    
+    }
+    
+    public String toString()
+    {
+        return null;
     }
     
     /**

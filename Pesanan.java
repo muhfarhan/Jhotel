@@ -4,6 +4,7 @@
  * @author Muhammad Farhan
  * @version 01-03-2018
  */
+import java.util.*;
 public class Pesanan
 {
     private double biaya;
@@ -12,6 +13,7 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
+    private Date tanggalPesan;
     
     public Pesanan()
     {
@@ -79,6 +81,11 @@ public class Pesanan
         return kamar;
     }
     
+    public Date getTanggalPesan()
+    {
+        return tanggalPesan;
+    }
+    
     /**
      * merupakan method untuk memasukkan nilai dari biaya
      * @param biaya
@@ -128,6 +135,16 @@ public class Pesanan
     public void setRoom(Room kamar)
     {
         this.kamar = kamar;
+    }
+    
+    public void setTanggalPesan(Date tanggalPesan)
+    {
+       this.tanggalPesan = tanggalPesan; 
+    }
+    
+    public String toString()
+    {
+        return null;
     }
     
     /**

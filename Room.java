@@ -95,6 +95,11 @@ public abstract class Room
         this.pesan = pesan;
     }
     
+    public String toString()
+    {
+        return null;
+    }
+    
     public void printData()
     {
         //digunakan untuk mencetak nilai yang diinginkan

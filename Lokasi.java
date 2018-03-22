@@ -92,6 +92,11 @@ public class Lokasi
         deskripsiLokasi = deskripsi;
     }
     
+    public String toString()
+    {
+        return null;
+    }
+    
     /**
      * merupakan method untuk mencetak nilai
      */

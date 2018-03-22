@@ -27,6 +27,7 @@ public class SingleRoom extends Room
      */
     public TipeKamar getTipeKamar()
     {
+        //return ke single
         return TIPE_KAMAR;
     }
 }
