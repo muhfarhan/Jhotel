@@ -4,7 +4,12 @@
  * @author Muhammad Farhan
  * @version 01-03-2018
  */
+import java.text.*;
 import java.util.*;
+import java.util.Date;
+import java.util.regex.*;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 public class Pesanan
 {
     private double biaya;
@@ -27,12 +32,22 @@ public class Pesanan
      * @param pelanggan
      */
     public Pesanan(double jumlahHari, Customer pelanggan,
-    Room kamar)
-    {
+    Room kamar, int tahun, int bulan, int tanggal)
+    {        
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         this.kamar = kamar;
         this.biaya = (kamar.dailyTariff*jumlahHari);
+        Date tanggalPesan = new Date(tahun,bulan,tanggal);
+    }
+    
+    public Pesanan(double jumlahHari, Customer pelanggan,
+    Room kamar, Date tanggalPesan)
+    {
+        this.jumlahHari = jumlahHari;
+        this.pelanggan = pelanggan;
+        this.kamar = kamar;
+        this.tanggalPesan = tanggalPesan;
     }
     
     /**

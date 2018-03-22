@@ -4,8 +4,13 @@
  * @author Muhammad Farhan
  * @version 01-03-2018
  */
+import java.text.*;
 import java.util.*;
+import java.util.Date;
 import java.util.regex.*;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class Customer
 {
     protected int id;
@@ -24,16 +29,18 @@ public class Customer
      * @param id
      * @param nama
      */
-    public Customer( int id, String nama, int Tahun, int Bulan, int Tanggal)
+    public Customer( int id, String nama, int tahun, int bulan, int tanggal)
     {
         this.nama = nama;
         this.id = id;
-        Date dob = new Date(Tahun,Bulan,Tanggal);
+        Date dob = new Date(tahun,bulan,tanggal);
     }
     
-    public Customer(Date dob)
+    public Customer(int id, String nama, Date dob)
     {
-        
+        this.nama = nama;
+        this.id = id;
+        this.dob = dob;
     }
     
     /**
@@ -61,6 +68,9 @@ public class Customer
     
     public Date getDOB()
     {
+        DateFormat form = new SimpleDateFormat("     'DOB : ' dd MMMM yyyy");
+        String out = form.format(dob);
+        System.out.print(out);
         return dob;
     }
     

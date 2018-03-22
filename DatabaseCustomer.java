@@ -6,7 +6,7 @@
  */
 public class DatabaseCustomer
 {
-    private static String[] list_customer;
+    private static String[] customer;
     
     /**
      * merupakan method untuk menginisialisasi nilai dari
@@ -26,6 +26,6 @@ public class DatabaseCustomer
     
     public static String[] getCustomerDatabase()
     {
-        return list_customer;
+        return customer;
     }
 }

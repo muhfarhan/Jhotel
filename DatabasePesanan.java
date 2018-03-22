@@ -1,7 +1,7 @@
 
 public class DatabasePesanan
 {
-    private static String[] list_pesanan;
+    private static String[] pesanan;
     
     /**merupakan method untuk memasukkan nilai dari pesanan
      * @param baru
@@ -38,7 +38,7 @@ public class DatabasePesanan
     
     public static String[] getPesananDatabase()
     {
-        return list_pesanan;
+        return pesanan;
     }
     
     public static void pesananDibatalkan(Pesanan pesan)
