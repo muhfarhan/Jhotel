@@ -10,10 +10,8 @@ public abstract class Room
     // instance variables - replace the example below with your own
     private Hotel hotel;
     private String nomor_kamar;
-    private boolean isAvailable;
     protected double dailyTariff;
     private StatusKamar status_kamar;
-    private Pesanan pesan;
     
     public Room()
     {
@@ -23,12 +21,11 @@ public abstract class Room
     /**
      * Constructor for objects of class Room
      */
-    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable,
+    public Room(Hotel hotel, String nomor_kamar,
     StatusKamar status_kamar)
     {
         this.hotel=hotel;
         this.nomor_kamar=nomor_kamar;
-        this.isAvailable=isAvailable;
         this.dailyTariff=dailyTariff;
         this.status_kamar=status_kamar;
     }
@@ -43,11 +40,6 @@ public abstract class Room
         return nomor_kamar;
     }
     
-    public boolean getStatusAvailable()
-    {
-        return isAvailable;
-    }
-    
     public double getDailyTariff()
     {
         return dailyTariff;
@@ -56,11 +48,6 @@ public abstract class Room
     public StatusKamar getStatusKamar()
     {
         return status_kamar;
-    }
-    
-    public Pesanan getPesanan()
-    {
-        return pesan;
     }
     
     public abstract TipeKamar getTipeKamar();
@@ -75,11 +62,6 @@ public abstract class Room
         this.nomor_kamar = nomor_kamar;
     }
     
-    public void setStatusAvailable(boolean isAvailable)
-    {
-        this.isAvailable = isAvailable;
-    }
-    
     public void setDailyTariff(double dailytariff)
     {
         this.dailyTariff = dailyTariff;
@@ -90,16 +72,26 @@ public abstract class Room
         this.status_kamar = status_kamar;
     }
     
-    public void setPesanan(Pesanan pesan)
-    {
-        this.pesan = pesan;
-    }
-    
     public String toString()
     {
-        return null;
+        if(isAvailable == true)
+        {
+            return "Nama Hotel      : " + hotel.getNama() +
+                   "Tipe Kamar      : " + getTipeKamar() +
+                   "Harga           : " + getDailyTariff() +
+                   "Status Kamar    : " + status_kamar;
+        }
+        else
+        {
+            return "Nama Hotel      : " + hotel.getNama() +
+                   "Tipe Kamar      : " + getTipeKamar() +
+                   "Harga           : " + getDailyTariff() +
+                   "Status Kamar    : " + status_kamar +
+                   "Pelanggan       : " + pesan.getPelanggan().getNama();
+        }
     }
     
+    /*
     public void printData()
     {
         //digunakan untuk mencetak nilai yang diinginkan
@@ -110,4 +102,5 @@ public abstract class Room
         System.out.println("Status Kamar        : " + status_kamar);
         System.out.println("Tipe Kamar          : " + getTipeKamar());
     }
+    */
 }

@@ -12,9 +12,11 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 public class Pesanan
 {
+    int id;
     private double biaya;
     private double jumlahHari;
     private Customer pelanggan;
+    private boolean isAktif;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
@@ -31,29 +33,33 @@ public class Pesanan
      * @param biaya
      * @param pelanggan
      */
-    public Pesanan(double jumlahHari, Customer pelanggan,
-    Room kamar, int tahun, int bulan, int tanggal)
+    public Pesanan(double jumlahHari, Customer pelanggan, boolean isAktif)
     {        
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         this.kamar = kamar;
         this.biaya = (kamar.dailyTariff*jumlahHari);
         Date tanggalPesan = new Date(tahun,bulan,tanggal);
+        this.isAktif = true;
     }
-    
+
+    /**
     public Pesanan(double jumlahHari, Customer pelanggan,
-    Room kamar, Date tanggalPesan)
+    Date tanggalPesan)
     {
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         this.kamar = kamar;
         this.tanggalPesan = tanggalPesan;
     }
+     */
     
     /**
      * merupakan method untuk mendapatkan nilai dari biaya
      * @return biaya
      */
+    public int getID() {return id;}
+
     public double getBiaya()
     {
         return biaya;
@@ -72,6 +78,8 @@ public class Pesanan
     {
         return pelanggan;
     }
+
+    public boolean getStatusAktif() {return false;}
     
     /**
      * merupakan method untuk mendapatkan nilai dari StatusDiproses
@@ -95,11 +103,13 @@ public class Pesanan
     {
         return kamar;
     }
-    
+
     public Date getTanggalPesan()
     {
         return tanggalPesan;
     }
+
+    public void setID(int id) {this.id = id;}
     
     /**
      * merupakan method untuk memasukkan nilai dari biaya
@@ -159,12 +169,33 @@ public class Pesanan
     
     public String toString()
     {
-        return null;
+        String final_status = "KOSONG";
+        
+        if (isDiproses == true && isSelesai == false)
+        {
+            final_status = "DIPROSES";
+        } 
+        else if (isDiproses == false && isSelesai == false)
+        {
+            final_status = "KOSONG";
+        } 
+        else if (isDiproses == false && isSelesai == true)
+        {
+            final_status = "SELESAI";
+        }
+        
+        return "Dibuat Oleh " +pelanggan.getNama() +
+                ".Proses booking untuk" +kamar.getHotel()+
+                "Kamar Nomor " + kamar.getNomorKamar()+
+                "dengan tipe kamar yang diinginkan "+kamar.getTipeKamar()+
+                ". Status :" +final_status+ ".";
+    }
     }
     
+    /*
     /**
      * merupakan method untuk mencetak nilai
-     */
+     *
     public void printData()
     {
         //digunakan untuk mencetak biaya
@@ -174,5 +205,6 @@ public class Pesanan
         System.out.println("Jumlah Hari    : " + jumlahHari);
         System.out.println("Biaya Total    : " + biaya);
     }
+    */
     
-}
+

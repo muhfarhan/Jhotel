@@ -88,12 +88,15 @@ public class Hotel
     
     public String toString()
     {
-       return null; 
+       return  "\nNama Hotel     : " + nama +
+               "\nLokasi Hotel   : " + lokasi +
+               "\nBintang Hotel  : " + bintang ;
     }
     
+    /*
     /**
      * merupakan method untuk mencetak nilai
-     */
+     *
     public void printData()
     {
         //digunakan untuk mencetak nilai yang diinginkan
@@ -101,4 +104,5 @@ public class Hotel
         System.out.println("Lokasi     : " + lokasi.getDeskripsi());
         System.out.println("Bintang    : " + bintang);
     }
+    */
 }

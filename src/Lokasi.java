@@ -94,12 +94,15 @@ public class Lokasi
     
     public String toString()
     {
-        return null;
+        return "\nKoordinat X      : " + x_coord +
+               "\nKoordinat Y      : " + y_coord +
+               "\nDeskripsi Lokasi : " + deskripsiLokasi ;
     }
     
+    /*
     /**
      * merupakan method untuk mencetak nilai
-     */
+     *
     public void printData()
     {
         //digunakan untuk mencetak nilai yang diinginkan
@@ -107,4 +110,5 @@ public class Lokasi
         System.out.println("Koordinat Y     : " + y_coord);
         System.out.println("Deskripsi Lokasi: " + deskripsiLokasi);
     }
+    */
 }

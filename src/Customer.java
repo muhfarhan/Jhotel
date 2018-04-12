@@ -33,7 +33,7 @@ public class Customer
     {
         this.nama = nama;
         this.id = id;
-        Date dob = new Date(tahun,bulan,tanggal);
+        this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
     }
     
     public Customer(int id, String nama, Date dob)
@@ -101,7 +101,7 @@ public class Customer
         String pattern ="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
         Pattern pat = Pattern.compile(pattern);
         Matcher mat = pat.matcher(email);
-	
+    
         if (mat.matches())
         {
             this.email = email;
@@ -117,18 +117,34 @@ public class Customer
     
     public String toString()
     {
-        return null;
+        if(true)
+        {
+            return "\nCustomer ID   : " + id +
+                   "\nName          : " + nama +
+                   "\nE-Mail        : " + email +
+                   "\nDate of Birth : " + dob +
+                   "\nBooking order is in progress";        
+        }
+        else
+        {
+            return "\nCustomer ID   : " + id +
+                   "\nName          : " + nama +
+                   "\nE-Mail        : " + email +
+                   "\nDate of Birth : " + dob;        
+        }
     }
     
+    /*
     /**
      * merupakan method untuk mencetak data
-     */
+     *
     public void printData()
     {
         //digunakan untuk mencetak nilai yang diinginkan
         System.out.println("ID   : " + id);
         System.out.println("Nama : " + nama);
     }
+    */
 }
 
     

@@ -44,6 +44,7 @@ public class Administrasi
         kamar.setPesanan(wait);
         
         roomLepasPesanan(kamar);
+        kamar.getPesanan().getStatus(false);
     }
     
     public static void pesananSelesai(Room kamar)
@@ -55,7 +56,8 @@ public class Administrasi
         wait.setRoom(null);
         kamar.setPesanan(wait);
         
-        roomLepasPesanan(kamar); 
+        roomLepasPesanan(kamar);
+        kamar.getPesanan().getStatus(false);
     }
     
     public static void pesananDibatalkan(Pesanan pesan)

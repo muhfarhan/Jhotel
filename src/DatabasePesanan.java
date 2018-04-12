@@ -1,7 +1,8 @@
+import java.util.ArrayList
 
 public class DatabasePesanan
 {
-    private static String[] pesanan;
+    private static ArrayList<Pesanan> PESANAN_DATABASE;
     
     /**merupakan method untuk memasukkan nilai dari pesanan
      * @param baru
