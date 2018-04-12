@@ -74,6 +74,8 @@ public abstract class Room
     
     public String toString()
     {
+        return null;
+        /**
         if(isAvailable == true)
         {
             return "Nama Hotel      : " + hotel.getNama() +
@@ -89,6 +91,7 @@ public abstract class Room
                    "Status Kamar    : " + status_kamar +
                    "Pelanggan       : " + pesan.getPelanggan().getNama();
         }
+         */
     }
     
     /*

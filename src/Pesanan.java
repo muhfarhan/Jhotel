@@ -39,7 +39,6 @@ public class Pesanan
         this.pelanggan = pelanggan;
         this.kamar = kamar;
         this.biaya = (kamar.dailyTariff*jumlahHari);
-        Date tanggalPesan = new Date(tahun,bulan,tanggal);
         this.isAktif = true;
     }
 
@@ -138,7 +137,12 @@ public class Pesanan
          */
         this.pelanggan = pelanggan;
     }
-    
+
+    public void setStatusAktif(boolean aktif)
+    {
+        isAktif = aktif;
+    }
+
     /**
      * merupakan method untuk memasukkan nilai dari StatusDiproses
      * @param diproses
