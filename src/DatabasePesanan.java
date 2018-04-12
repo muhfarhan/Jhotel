@@ -3,19 +3,55 @@ import java.util.ArrayList
 public class DatabasePesanan
 {
     private static ArrayList<Pesanan> PESANAN_DATABASE;
+    private static int LAST_PESANAN_ID = 0;
     
     /**merupakan method untuk memasukkan nilai dari pesanan
-     * @param baru
-     * return false
+     * @param
+     *
      */
+
+    public static ArrayList<Pesanan> getPesanan(){}
+
+    public static int getLastPesananID(){}
+
     public static boolean addPesanan(Pesanan baru)
     {
         /* digunakan untuk menambahkan pesanan jika terdapat input
          * baru dari class Pesanan
          */
-        return false;
+        if(PESANAN_DATABASE.contains(baru)) {
+            if (baru.getStatusAktif()= true)
+            {
+                PESANAN_DATABASE.add(baru);
+                return true;
+            } else {
+                return false;
+            }
+            else
+            {
+                PESANAN_DATABASE.add(baru);
+                return true;
+            }
+        }
     }
     
+
+    public static Pesanan getPesanan(int id)
+    {
+        if(id == Pesanan.getID())
+        {
+            return Pesanan.getID();
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public static Pesanan getPesanan(Room kamar){}
+
+    public static Pesanan getPesananAktif(Customer pelanggan){}
+
     /**
      * merupakan method untuk menghilangkan nilai dari pesanan
      * @return false
@@ -30,20 +66,5 @@ public class DatabasePesanan
      * @param cust
      * @return pesan
      */
-    public static Pesanan getPesanan(Customer cust)
-    {
-        Pesanan pesan = new Pesanan();
-        return pesan;
-    }
-    
-    
-    public static String[] getPesananDatabase()
-    {
-        return pesanan;
-    }
-    
-    public static void pesananDibatalkan(Pesanan pesan)
-    {
-        
-    }
+    /**
 }
