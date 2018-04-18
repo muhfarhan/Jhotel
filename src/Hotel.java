@@ -7,17 +7,11 @@
  */
 public class Hotel
 {
-   private String nama;
-   private Lokasi lokasi;
-   private int bintang;
+    private int id;
+    private String nama;
+    private Lokasi lokasi;
+    private int bintang;
 
-    /**
-     * Constructor dari objects class Hotel
-     */
-    public Hotel()
-    {
-        
-    }
     
     /**
      * merupakan method untuk menginisialisasi nilai dari
@@ -31,7 +25,10 @@ public class Hotel
        this.nama = nama;
        this.lokasi = lokasi;
        this.bintang = bintang;
+       id = DatabaseHotel.getLastHotelID()+ 1;
     }
+
+    public int getID(){return id;}
     
     /**
      * merupakan method untuk mendapatkan nilai dari bintang
@@ -57,6 +54,8 @@ public class Hotel
     {
         return lokasi;
     }
+
+    public void setID(int id){this.id = id;}
     
     /**merupakan method untuk memasukkan nilai dari nama
      * @param nama
@@ -89,7 +88,7 @@ public class Hotel
     public String toString()
     {
        return  "\nNama Hotel     : " + nama +
-               "\nLokasi Hotel   : " + lokasi +
+               "\nLokasi Hotel   : " + lokasi.getDeskripsi() +
                "\nBintang Hotel  : " + bintang ;
     }
     

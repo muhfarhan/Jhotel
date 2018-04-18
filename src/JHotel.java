@@ -66,9 +66,9 @@ public class JHotel
         }
         */
        
-        Customer cust1 = new Customer(1,"farhan",new GregorianCalendar(1997,06,23).getTime());
+        //Customer cust1 = new Customer(1,"farhan",new GregorianCalendar(1997,06,23).getTime());
         //cust1.getDOB();
-        System.out.println(cust1.getDOB());
+        //System.out.println(cust1.getDOB());
     }
     
     public JHotel()

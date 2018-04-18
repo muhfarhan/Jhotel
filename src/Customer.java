@@ -17,29 +17,24 @@ public class Customer
     protected String nama;
     protected String email;
     protected Date dob;
-    
-    public Customer()
-    {
-        
-    }
+
        
     /**
      * merupakan method untuk menginisialisasi nilai dari 
      * id dan nama
-     * @param id
      * @param nama
      */
-    public Customer( int id, String nama, int tahun, int bulan, int tanggal)
+    public Customer(String nama, int tahun, int bulan, int tanggal)
     {
         this.nama = nama;
-        this.id = id;
+        id = DatabaseCustomer.getLastCustomerID() + 1;
         this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
     }
     
-    public Customer(int id, String nama, Date dob)
+    public Customer(String nama, Date dob)
     {
         this.nama = nama;
-        this.id = id;
+        id = DatabaseCustomer.getLastCustomerID() +1 ;
         this.dob = dob;
     }
     
@@ -117,7 +112,7 @@ public class Customer
     
     public String toString()
     {
-        if(true)
+        if(DatabasePesanan.getPesananAktif(this) != null)
         {
             return "\nCustomer ID   : " + id +
                    "\nName          : " + nama +

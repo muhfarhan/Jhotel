@@ -13,21 +13,15 @@ public abstract class Room
     protected double dailyTariff;
     private StatusKamar status_kamar;
     
-    public Room()
-    {
-        
-    }
-    
     /**
      * Constructor for objects of class Room
      */
     public Room(Hotel hotel, String nomor_kamar,
     StatusKamar status_kamar)
     {
-        this.hotel=hotel;
-        this.nomor_kamar=nomor_kamar;
-        this.dailyTariff=dailyTariff;
-        this.status_kamar=status_kamar;
+        this.hotel = hotel;
+        this.nomor_kamar = nomor_kamar;
+        this.status_kamar = StatusKamar.Vacant;
     }
 
     public Hotel getHotel()
@@ -74,9 +68,7 @@ public abstract class Room
     
     public String toString()
     {
-        return null;
-        /**
-        if(isAvailable == true)
+        if(DatabasePesanan.getPesanan(this) == null)
         {
             return "Nama Hotel      : " + hotel.getNama() +
                    "Tipe Kamar      : " + getTipeKamar() +
@@ -86,12 +78,12 @@ public abstract class Room
         else
         {
             return "Nama Hotel      : " + hotel.getNama() +
-                   "Tipe Kamar      : " + getTipeKamar() +
+                   "Tipe Kamar      : " + getTipeKamar().toString() +
                    "Harga           : " + getDailyTariff() +
                    "Status Kamar    : " + status_kamar +
-                   "Pelanggan       : " + pesan.getPelanggan().getNama();
+                   "Pelanggan       : " + DatabasePesanan.getPesanan(this).getPelanggan().getNama();
         }
-         */
+
     }
     
     /*

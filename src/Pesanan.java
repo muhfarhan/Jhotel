@@ -30,7 +30,7 @@ public class Pesanan
     /**
      * merupakan method untuk menginisialisasi nilai dari
      * biaya dan pelanggan
-     * @param biaya
+     * @param
      * @param pelanggan
      */
     public Pesanan(double jumlahHari, Customer pelanggan, boolean isAktif)
@@ -40,6 +40,7 @@ public class Pesanan
         this.kamar = kamar;
         this.biaya = (kamar.dailyTariff*jumlahHari);
         this.isAktif = true;
+        id = DatabasePesanan.getLastPesananID() + 1;
     }
 
     /**

@@ -22,13 +22,11 @@ public class Administrasi
     public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.Booked);
-        kamar.setPesanan(pesan);
     }
     
     public static void roomLepasPesanan(Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.Vacant);
-        kamar.setPesanan(null);
     }
     
     public static void pesananDibatalkan(Room kamar)
@@ -36,6 +34,7 @@ public class Administrasi
         /* kamar.pesan.setStatusSelesai(false); 
          * tidak bisa dilakukan karena pesan merupakan private
          * object milik class Room*/
+        /**
         Pesanan wait = new Pesanan();
         wait = kamar.getPesanan();
         wait.setStatusSelesai(false);
@@ -45,10 +44,12 @@ public class Administrasi
         
         roomLepasPesanan(kamar);
         kamar.getPesanan().getStatus(false);
+         */
     }
     
     public static void pesananSelesai(Room kamar)
     {
+        /**
         Pesanan wait = new Pesanan();
         wait = kamar.getPesanan();
         wait.setStatusSelesai(true);
@@ -58,7 +59,9 @@ public class Administrasi
         
         roomLepasPesanan(kamar);
         kamar.getPesanan().getStatus(false);
+         */
     }
+
     
     public static void pesananDibatalkan(Pesanan pesan)
     {
