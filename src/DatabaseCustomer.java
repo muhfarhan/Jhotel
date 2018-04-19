@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class DatabaseCustomer
 {
-    private static ArrayList<Customer> CUSTOMER_DATABASE;
+    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<Customer>();
     private static int LAST_CUSTOMER_ID;
 
     public static ArrayList<Customer> getCustomerDatabase()
@@ -21,17 +21,17 @@ public class DatabaseCustomer
     /**
      * merupakan method untuk menginisialisasi nilai dari
      * baru yang bersala dari customer
-     * @param baru
+     * @param
      * @return false
      */
-    public static boolean addCustomer(Customer baru)
+    public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException
     {
         for (int i = 0; i < CUSTOMER_DATABASE.size(); i++)
         {
             Customer pelanggan = CUSTOMER_DATABASE.get(i);
-            if (pelanggan.getID()==baru.getID())
+            if (pelanggan.getID()==baru.getID() || pelanggan.getEmail()==baru.getEmail())
             {
-                return false;
+                throw new PelangganSudahAdaException(baru);
             }
         }
         LAST_CUSTOMER_ID = baru.getID();
@@ -52,22 +52,35 @@ public class DatabaseCustomer
         return null;
     }
 
-    public static boolean removeCustomer(int id)
+    public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
     {
-        for (int i = 0; i < CUSTOMER_DATABASE.size(); i++)
+        for(Customer pelanggan : CUSTOMER_DATABASE)
         {
-            Customer pelanggan = CUSTOMER_DATABASE.get(i);
-            if (pelanggan.getID() == id)
+            if(pelanggan.getID() == id)
             {
-                Pesanan pesan = DatabasePesanan.getPesananAktif(pelanggan);
-                DatabasePesanan.removePesanan(pesan);
-                if (CUSTOMER_DATABASE.remove(pelanggan))
+                for(Pesanan pesan : DatabasePesanan.getPesanan())
+                {
+                    if(pesan.getPelanggan()==pelanggan){
+                        try
+                        {
+                            DatabasePesanan.removePesanan(pelanggan);
+                        }
+                        catch(PesananTidakDitemukanException a)
+                        {
+                            throw new PelangganTidakDitemukanException(id);
+                        }
+                    }
+                }
+
+
+                if(CUSTOMER_DATABASE.remove(pelanggan))
                 {
                     return true;
                 }
             }
         }
-        return false;
+
+        throw new PelangganTidakDitemukanException(id);
     }
     
 

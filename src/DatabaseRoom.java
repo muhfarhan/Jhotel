@@ -12,14 +12,14 @@ public class DatabaseRoom
 
     public static ArrayList<Room> getRoomDatabase(){return ROOM_DATABASE;}
 
-    public static boolean addRoom(Room baru)
+    public static boolean addRoom(Room baru) throws RoomSudahAdaException
     {
         for (int i = 0; i < ROOM_DATABASE.size(); i++)
         {
             Room kamar = ROOM_DATABASE.get(i);
             if (kamar.getHotel().equals(baru.getHotel())&& kamar.getNomorKamar()==baru.getNomorKamar())
             {
-                return false;
+                throw new RoomSudahAdaException(baru);
             }
         }
         ROOM_DATABASE.add(baru);
@@ -67,7 +67,7 @@ public class DatabaseRoom
         return REQUEST_ROOM;
     }
 
-    public static boolean removeRoom(Hotel hotel, String nomor_kamar)
+    public static boolean removeRoom(Hotel hotel, String nomor_kamar) throws  RoomTidakDitemukanException
     {
         for (int i = 0; i < ROOM_DATABASE.size(); i++)
         {
@@ -81,7 +81,7 @@ public class DatabaseRoom
                 return true;
             }
         }
-        return false;
+        throw new RoomTidakDitemukanException(hotel,nomor_kamar);
     }
 }
 

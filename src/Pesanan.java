@@ -33,12 +33,12 @@ public class Pesanan
      * @param
      * @param pelanggan
      */
-    public Pesanan(double jumlahHari, Customer pelanggan, boolean isAktif)
+    public Pesanan(double jumlahHari, Customer pelanggan)
     {        
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         this.kamar = kamar;
-        this.biaya = (kamar.dailyTariff*jumlahHari);
+        //this.biaya = (kamar.dailyTariff*jumlahHari);
         this.isAktif = true;
         id = DatabasePesanan.getLastPesananID() + 1;
     }
@@ -127,7 +127,7 @@ public class Pesanan
     
     /**
      * merupakan method untuk memasukkan nilai dari pelanggan
-     * @param baru
+     * @param
      */
     public void setPelanggan(Customer pelanggan)
     {
@@ -155,7 +155,7 @@ public class Pesanan
     
     /**
      * merupakan method untuk memasukkan nilai dari StatusSelesai
-     * @param diproses
+     * @param
      */
     public void setStatusSelesai(boolean selesai)
     {
@@ -188,12 +188,23 @@ public class Pesanan
         {
             final_status = "SELESAI";
         }
-        
-        return "Dibuat Oleh " +pelanggan.getNama() +
-                ".Proses booking untuk" +kamar.getHotel()+
-                "Kamar Nomor " + kamar.getNomorKamar()+
-                "dengan tipe kamar yang diinginkan "+kamar.getTipeKamar()+
-                ". Status :" +final_status+ ".";
+
+        if (kamar != null) {
+            return "\n Pesanan" +
+                    "\n pelanggan=" + pelanggan.getNama() +
+                    "\n jumlah hari =" + jumlahHari +
+                    "\n hotel=" + kamar.getHotel().getNama() +
+                    "\n kamar=" + kamar.getNomorKamar() +
+                    "\n tipeKamar=" + kamar.getTipeKamar() +
+                    "\n status='" + final_status;
+        }
+        return "\n Pesanan" +
+                "\n pelanggan=" + pelanggan.getNama() +
+                "\n jumlah hari=" + jumlahHari +
+                "\n hotel=null" +
+                "\n kamar=null" +
+                "\n tipeKamar=" +
+                "\n status='" + final_status;
     }
     }
     

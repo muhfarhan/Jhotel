@@ -16,18 +16,20 @@ public class Administrasi
         pesan.setStatusDiproses(true);
         pesan.setRoom(kamar);
         
-        roomAmbilPesanan(pesan, kamar);
+        kamar.setStatusKamar(StatusKamar.Booked);
     }
 
+    /*
     public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.Booked);
-    }
-    
+    }*/
+
+    /*
     public static void roomLepasPesanan(Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.Vacant);
-    }
+    }*/
     
     public static void pesananDibatalkan(Room kamar)
     {
@@ -35,6 +37,13 @@ public class Administrasi
          * tidak bisa dilakukan karena pesan merupakan private
          * object milik class Room*/
         /**
+        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        pesan.setStatusSelesai(false);
+        pesan.setStatusDiproses(false);
+        pesan.setStatusAktif(false);
+        */
+        kamar.setStatusKamar(StatusKamar.Vacant);
+         /**
         Pesanan wait = new Pesanan();
         wait = kamar.getPesanan();
         wait.setStatusSelesai(false);
@@ -49,6 +58,12 @@ public class Administrasi
     
     public static void pesananSelesai(Room kamar)
     {
+        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        pesan.setStatusSelesai(true);
+        pesan.setStatusDiproses(false);
+        pesan.setStatusAktif(false);
+        roomLepasPesanan(kamar);
+        //kamar.setStatusKamar(StatusKamar.Vacant);
         /**
         Pesanan wait = new Pesanan();
         wait = kamar.getPesanan();
@@ -69,6 +84,7 @@ public class Administrasi
         
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
+        pesan.setStatusAktif(false);
         pesan.setRoom(null);
     }
     
@@ -78,6 +94,11 @@ public class Administrasi
 
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
+        pesan.setStatusAktif(false);
         pesan.setRoom(null);
+    }
+
+    public static void roomLepasPesanan(Room kamar){
+        kamar.setStatusKamar(StatusKamar.Vacant);
     }
 }

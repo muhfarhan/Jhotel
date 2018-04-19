@@ -2,7 +2,7 @@ import java.util.*;
 
 public class DatabasePesanan
 {
-    private static ArrayList<Pesanan> PESANAN_DATABASE;
+    private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<Pesanan>();
     private static int LAST_PESANAN_ID = 0;
     
     /**merupakan method untuk memasukkan nilai dari pesanan
@@ -14,29 +14,30 @@ public class DatabasePesanan
 
     public static int getLastPesananID(){return LAST_PESANAN_ID;}
 
-    public static boolean addPesanan(Pesanan baru)
-    {
-        /* digunakan untuk menambahkan pesanan jika terdapat input
-         * baru dari class Pesanan
-         */
-        if(PESANAN_DATABASE.contains(baru))
-        {
-            if (baru.getStatusAktif()== true)
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException{
+
+            /* digunakan untuk menambahkan pesanan jika terdapat input
+             * baru dari class Pesanan
+             */
+            if (PESANAN_DATABASE.contains(baru))
+            {
+                if (baru.getStatusAktif() == true)
                 {
-                PESANAN_DATABASE.add(baru);
-                return true;
+                    throw new PesananSudahAdaException(baru);
                 }
+                else
+                    {
+                    PESANAN_DATABASE.add(baru);
+                    return true;
+                    }
+            }
             else
                 {
-                return false;
-                }
-        }
-        else
-            {
                 PESANAN_DATABASE.add(baru);
                 return true;
-            }
-        }
+                }
+    }
+
     
 
     public static Pesanan getPesanan(int id)
@@ -84,7 +85,7 @@ public class DatabasePesanan
      * merupakan method untuk menghilangkan nilai dari pesanan
      * @return false
      */
-    public static boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Customer pesan) throws PesananTidakDitemukanException
     {
         for(Pesanan pesanan : PESANAN_DATABASE)
         {
@@ -108,6 +109,6 @@ public class DatabasePesanan
                 }
             }
         }
-        return false;
+        throw new PesananTidakDitemukanException(pesan);
     }
-    }
+}
