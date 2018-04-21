@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03438236-82c0-4dd4-8dd0-373378b0fa2f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jhotel/Administrasi.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jhotel/DatabaseCustomer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jhotel/DatabaseHotel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jhotel/DatabasePesanan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jhotel/DoubleRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jhotel/JHotel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jhotel/Pesanan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jhotel/PremiumRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jhotel/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/jhotel/SingleRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Administrasi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrasi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseHotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseHotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabasePesanan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabasePesanan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DoubleRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DoubleRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JHotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JHotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pesanan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pesanan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PremiumRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PremiumRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SingleRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SingleRoom.java" afterDir="false" />
-    </list>
+    <list default="true" id="03438236-82c0-4dd4-8dd0-373378b0fa2f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -180,7 +156,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="679" />
     <option name="height" value="728" />
   </component>
@@ -306,7 +282,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3133858" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3133858" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
