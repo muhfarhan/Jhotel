@@ -365,7 +365,32 @@ public class JHotel
         System.out.println("\n\n---  Hasil Akhir Hotel  --- \n");
         System.out.println(DatabaseHotel.getHotelDatabase());
         */
+
+        //modul8
+
+        try{
+            DatabaseHotel.addHotel(new Hotel("Tom", new Lokasi(12, 23, "Tom and Jerry"), 5));
+            DatabaseHotel.addHotel(new Hotel("Jerry", new Lokasi(32, 21, "Jerry and Tom"), 6));
+        }
+        catch(HotelSudahAdaException a)
+        {
+            a.getPesan();
+        }
+
+        try
+        {
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "S100"));
+            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "S101"));
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(2), "S102"));
+        }
+        catch(RoomSudahAdaException a)
+        {
+            a.getPesan();
+        }
+
+        System.out.println("test :" + DatabaseRoom.getRoomDatabase());
         SpringApplication.run(JHotel.class, args);
+
     }
     
     public JHotel()

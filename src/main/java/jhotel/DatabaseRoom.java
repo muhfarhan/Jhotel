@@ -32,7 +32,7 @@ public class DatabaseRoom
         for (int i = 0; i < ROOM_DATABASE.size(); i++)
         {
             Room kamar = ROOM_DATABASE.get(i);
-            if (kamar.getHotel().equals(hotel)&&kamar.getNomorKamar()==nomor_kamar)
+            if (kamar.getHotel().equals(hotel)&&kamar.getNomorKamar().equals(nomor_kamar))
             {
                 return kamar;
             }
@@ -73,7 +73,7 @@ public class DatabaseRoom
         for (int i = 0; i < ROOM_DATABASE.size(); i++)
         {
             Room kamar = ROOM_DATABASE.get(i);
-            if (kamar.getHotel().equals(hotel)&&kamar.getNomorKamar()==nomor_kamar)
+            if (kamar.getHotel().equals(hotel)&&kamar.getNomorKamar().equals(nomor_kamar))
             {
                 Administrasi.pesananDibatalkan(kamar);
             }

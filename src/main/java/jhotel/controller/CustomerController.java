@@ -13,8 +13,9 @@ public class CustomerController {
 
     @RequestMapping(value = "/newcustomer", method = RequestMethod.POST)
     public Customer newCust(@RequestParam(value="name") String name, @RequestParam(value="email") String email,
-                            @RequestParam(value="tahun",required = false, defaultValue = "2000") int tahun) {
-        Customer customer = new Customer(name, tahun, 10, 10, email);
+                            @RequestParam(value="tahun",required = false, defaultValue = "2000") int tahun,
+                            @RequestParam(value="password") String password) {
+        Customer customer = new Customer(name, tahun, 10 , 10, email,password);
         try {
             DatabaseCustomer.addCustomer(customer);
         } catch(Exception ex) {
@@ -22,6 +23,13 @@ public class CustomerController {
             return null;
         };
 
+        return customer;
+    }
+
+    @RequestMapping(value = "/logincust",method = RequestMethod.POST)
+    public Customer loginCust( @RequestParam(value="email") String email,@RequestParam(value="password") String password)
+    {
+        Customer customer = DatabaseCustomer.getCustomerLogin(email,password);
         return customer;
     }
 

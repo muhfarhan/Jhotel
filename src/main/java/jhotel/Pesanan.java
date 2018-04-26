@@ -115,9 +115,9 @@ public class Pesanan
     
     /**
      * merupakan method untuk memasukkan nilai dari biaya
-     * @param biaya
+     * @param
      */
-    public void setBiaya(double biaya)
+    public void setBiaya()
     {
         this.biaya = (kamar.dailyTariff*jumlahHari);   
     }

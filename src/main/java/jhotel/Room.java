@@ -72,7 +72,7 @@ public abstract class Room
     
     public String toString()
     {
-        if(DatabasePesanan.getPesanan(this) == null)
+        if(DatabasePesanan.getPesananAktif(this) == null)
         {
             return "Nama Hotel      : " + hotel.getNama() +
                    "Tipe Kamar      : " + getTipeKamar() +
@@ -85,7 +85,7 @@ public abstract class Room
                    "Tipe Kamar      : " + getTipeKamar().toString() +
                    "Harga           : " + getDailyTariff() +
                    "Status Kamar    : " + status_kamar +
-                   "Pelanggan       : " + DatabasePesanan.getPesanan(this).getPelanggan().getNama();
+                   "Pelanggan       : " + DatabasePesanan.getPesananAktif(this).getPelanggan().getNama();
         }
 
     }

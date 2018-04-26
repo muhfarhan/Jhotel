@@ -14,31 +14,33 @@ import java.util.GregorianCalendar;
 
 public class Customer
 {
-    protected int id;
-    protected String nama;
-    protected String email;
-    protected Date dob;
-
+    private int id;
+    private String nama;
+    private String email;
+    private Date dob;
+    private String password;
        
     /**
      * merupakan method untuk menginisialisasi nilai dari 
      * id dan nama
      * @param nama
      */
-    public Customer(String nama, int tahun, int bulan, int tanggal, String email)
+    public Customer(String nama, int tahun, int bulan, int tanggal, String email,String password)
     {
         this.nama = nama;
         id = DatabaseCustomer.getLastCustomerID() + 1;
         this.dob = new GregorianCalendar(tahun,bulan,tanggal).getTime();
         this.email = email;
+        this.password = password;
     }
     
-    public Customer(String nama, Date dob, String email)
+    public Customer(String nama, Date dob, String email,String password)
     {
         this.nama = nama;
         id = DatabaseCustomer.getLastCustomerID() +1 ;
         this.dob = dob;
         this.email = email;
+        this.password = password;
     }
     
     /**
@@ -49,6 +51,8 @@ public class Customer
     {
         return id;
     }
+
+    public String getPassword(){return password;}
     
     /**
      * merupakan method untuk mendapatkan nilai dari nama
@@ -80,6 +84,11 @@ public class Customer
     {
         this.id = id;
     }
+
+    public void setPassword(String password)
+        {
+            this.password=password;
+        }
     
     /**
      * merupakan method untuk mengatur nilai dari nama
