@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 @RestController
 public class PesananController {
-    @RequestMapping(value = "/pesanancust/{id_customer}",method = RequestMethod.GET)
+    @RequestMapping("/pesanancust/{id_customer}")
     public Pesanan pesananCust(@PathVariable int id_customer)
     {
         Pesanan pesan = DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(id_customer));
@@ -21,7 +21,7 @@ public class PesananController {
     }
 
     @RequestMapping(value = "/bookpesanan",method = RequestMethod.POST)
-    public Pesanan buatPesanan(@RequestParam(value="jumlah_hari") int jumlah_hari,
+    public Pesanan buatPesanan(@RequestParam(value="jumlah_hari") double jumlah_hari,
                                @RequestParam(value="id_customer") int id_customer,
                                @RequestParam(value="id_hotel") int id_hotel,
                                @RequestParam(value="nomor_kamar") String nomor_kamar)
@@ -40,7 +40,6 @@ public class PesananController {
         {
             pesanan.setBiaya();
         }
-
         return pesanan;
     }
 

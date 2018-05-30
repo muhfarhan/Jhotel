@@ -29,10 +29,16 @@ public class Hotel
        id = DatabaseHotel.getLastHotelID()+ 1;
     }
 
+    /**
+     * mendapatkan nilai id
+     *
+     * @return id
+     */
     public int getID(){return id;}
     
     /**
      * merupakan method untuk mendapatkan nilai dari bintang
+     *
      * @return bintang
      */
     public int getBintang()
@@ -40,7 +46,9 @@ public class Hotel
         return bintang;
     }
     
-    /**merupakan method untuk mendapatkan nilai dari nama
+    /**
+     * merupakan method untuk mendapatkan nilai dari nama
+     *
      * @return nama
      */
     public String getNama()
@@ -48,7 +56,9 @@ public class Hotel
         return nama;
     }
     
-    /**merupakan method untuk mendapatkan nilai dari Lokasi
+    /**
+     * merupakan method untuk mendapatkan nilai dari Lokasi
+     *
      * @return lokasi
      */
     public Lokasi getLokasi()
@@ -56,9 +66,16 @@ public class Hotel
         return lokasi;
     }
 
+    /**
+     * menentukan nilai id
+     *
+     * @param id berisi id
+     */
     public void setID(int id){this.id = id;}
     
-    /**merupakan method untuk memasukkan nilai dari nama
+    /**
+     * merupakan method untuk memasukkan nilai dari nama
+     *
      * @param nama
      */
     public void setNama(String nama)
@@ -70,7 +87,9 @@ public class Hotel
         this.nama = nama;
     }
     
-    /**merupakan method untuk memasukkan nilai dari lokasi
+    /**
+     * merupakan method untuk memasukkan nilai dari lokasi
+     *
      * @param lokasi
      */
     public void setLokasi(Lokasi lokasi)
@@ -78,31 +97,25 @@ public class Hotel
          this.lokasi = lokasi;
     }
     
-    /**merupakan method untuk memasukkan nilai dari bintang
+    /**
+     * merupakan method untuk memasukkan nilai dari bintang
+     *
      * @param bintang
      */
     public void setBintang(int bintang)
     {
         this.bintang = bintang;
     }
-    
+
+    /**
+     * untuk mencetak String pada objek Customer
+     *
+     * @return string
+     */
     public String toString()
     {
        return  "\nNama Hotel     : " + nama +
                "\nLokasi Hotel   : " + lokasi.getDeskripsi() +
                "\nBintang Hotel  : " + bintang ;
     }
-    
-    /*
-    /**
-     * merupakan method untuk mencetak nilai
-     *
-    public void printData()
-    {
-        //digunakan untuk mencetak nilai yang diinginkan
-        System.out.println("Nama Hotel : " + nama);
-        System.out.println("Lokasi     : " + lokasi.getDeskripsi());
-        System.out.println("Bintang    : " + bintang);
-    }
-    */
 }

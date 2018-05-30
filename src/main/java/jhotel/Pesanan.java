@@ -23,7 +23,11 @@ public class Pesanan
     private boolean isSelesai;
     private Room kamar;
     private Date tanggalPesan;
-    
+
+    /**
+     * Default Constructor for objects of class Pesanan.
+     *
+     */
     public Pesanan()
     {
         
@@ -32,104 +36,143 @@ public class Pesanan
     /**
      * merupakan method untuk menginisialisasi nilai dari
      * biaya dan pelanggan
-     * @param
+     *
+     * @param jumlahHari
      * @param pelanggan
      */
     public Pesanan(double jumlahHari, Customer pelanggan)
     {        
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
-        this.kamar = kamar;
-        //this.biaya = (kamar.dailyTariff*jumlahHari);
-        this.isAktif = true;
+        isAktif = true;
+        tanggalPesan = new Date();
         id = DatabasePesanan.getLastPesananID() + 1;
     }
 
     /**
-    public Pesanan(double jumlahHari, Customer pelanggan,
-    Date tanggalPesan)
-    {
-        this.jumlahHari = jumlahHari;
-        this.pelanggan = pelanggan;
-        this.kamar = kamar;
-        this.tanggalPesan = tanggalPesan;
-    }
-     */
-    
-    /**
-     * merupakan method untuk mendapatkan nilai dari biaya
-     * @return biaya
+     * mendaptkan nilai id pesanan
+     *
+     * @return id
      */
     public int getID() {return id;}
 
+    /**
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai biaya.
+     *
+     * @return biaya
+     */
     public double getBiaya()
     {
         return biaya;
     }
-    
+
+    /**
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai jumlahhari.
+     *
+     * @return jumlahHari
+     */
     public double getJumlahHari()
     {
         return jumlahHari;
     }
-    
+
     /**
-     * merupakan method untuk mendapatkan nilai dari biaya
-     * @return biaya
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai pelanggan.
+     *
+     * @return pelanggan
      */
     public Customer getPelanggan()
     {
         return pelanggan;
     }
 
-    public boolean getStatusAktif() {return false;}
-    
     /**
-     * merupakan method untuk mendapatkan nilai dari StatusDiproses
-     * @return false
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai status aktif.
+     *
+     * @return isAktif
+     */
+    public boolean getStatusAktif() {return isAktif;}
+
+    /**
+     * mendaptakan nilai status diproses.
+     *
+     * @return isDiproses
      */
     public boolean getStatusDiproses()
     {
-        return false;
+        return isDiproses;
     }
-    
+
     /**
-     * merupakan method untuk mendapatkan nilai dari StatusSelesai
-     * @return false
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai status selesai.
+     *
+     * @return isSelesai
      */
     public boolean getStatusSelesai()
     {
-        return false;
+        return isSelesai;
     }
-    
+
+    /**
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai room
+     *
+     * @return kamar
+     */
     public Room getRoom()
     {
         return kamar;
     }
 
+    /**
+     * mendaptakan nilai tanggal pesan
+     *
+     * @return tanggalPesan
+     */
     public Date getTanggalPesan()
     {
+        DateFormat df = new SimpleDateFormat("'DOB : 'dd MMMM yyyy");
+        String hasil = df.format(tanggalPesan);
+        System.out.println(hasil);
         return tanggalPesan;
     }
 
-    public void setID(int id) {this.id = id;}
-    
     /**
-     * merupakan method untuk memasukkan nilai dari biaya
-     * @param
+     * Mutator for objects of class Pesanan
+     * untuk menentukan nilai ID.
+     *
+     * @param id berisi id pesanan
+     */
+    public void setID(int id) {this.id = id;}
+
+    /**
+     * menentukan nilai biaya
+     *
      */
     public void setBiaya()
     {
-        this.biaya = (kamar.dailyTariff*jumlahHari);   
+        biaya = (kamar.dailyTariff*jumlahHari);
     }
-    
+
+    /**
+     * menentukan nilai jumlahHari
+     *
+     */
     public void setJumlahHari(double jumlahHari)
     {
         this.jumlahHari = jumlahHari;
     }
-    
+
     /**
-     * merupakan method untuk memasukkan nilai dari pelanggan
-     * @param
+     * Mutator for objects of class Pesanan
+     * untuk menenetukan nilai pelanggan.
+     *
+     * @param pelanggan objek Costumer
      */
     public void setPelanggan(Customer pelanggan)
     {
@@ -141,6 +184,11 @@ public class Pesanan
         this.pelanggan = pelanggan;
     }
 
+    /**
+     * merupakan method untuk memasukkan nilai dari StatusAktif
+     *
+     * @param aktif
+     */
     public void setStatusAktif(boolean aktif)
     {
         isAktif = aktif;
@@ -148,6 +196,7 @@ public class Pesanan
 
     /**
      * merupakan method untuk memasukkan nilai dari StatusDiproses
+     *
      * @param diproses
      */
     public void setStatusDiproses(boolean diproses)
@@ -157,23 +206,39 @@ public class Pesanan
     
     /**
      * merupakan method untuk memasukkan nilai dari StatusSelesai
-     * @param
+     *
+     * @param selesai
      */
     public void setStatusSelesai(boolean selesai)
     {
         isSelesai = selesai;
     }
-    
+
+    /**
+     * merupakan method untuk memasukkan nilai dari Room
+     *
+     * @param kamar
+     */
     public void setRoom(Room kamar)
     {
         this.kamar = kamar;
     }
-    
+
+    /**
+     * merupakan method untuk memasukkan nilai dari TanggalPesam
+     *
+     * @param tanggalPesan
+     */
     public void setTanggalPesan(Date tanggalPesan)
     {
        this.tanggalPesan = tanggalPesan; 
     }
-    
+
+    /**
+     * merupakan method untuk mencetak hasil String
+     *
+     * @return String
+     */
     public String toString()
     {
         String final_status = "KOSONG";
@@ -192,37 +257,23 @@ public class Pesanan
         }
 
         if (kamar != null) {
-            return "\n Pesanan" +
-                    "\n pelanggan=" + pelanggan.getNama() +
+            return "\n Pesanan \n" +
+                    "\n pelanggan =" + pelanggan.getNama() +
                     "\n jumlah hari =" + jumlahHari +
-                    "\n hotel=" + kamar.getHotel().getNama() +
-                    "\n kamar=" + kamar.getNomorKamar() +
-                    "\n tipeKamar=" + kamar.getTipeKamar() +
-                    "\n status='" + final_status;
+                    "\n hotel =" + kamar.getHotel().getNama() +
+                    "\n kamar =" + kamar.getNomorKamar() +
+                    "\n tipeKamar =" + kamar.getTipeKamar() +
+                    "\n status ='" + final_status;
         }
-        return "\n Pesanan" +
-                "\n pelanggan=" + pelanggan.getNama() +
-                "\n jumlah hari=" + jumlahHari +
-                "\n hotel=null" +
-                "\n kamar=null" +
-                "\n tipeKamar=" +
-                "\n status='" + final_status;
+        return "\n Pesanan \n" +
+                "\n pelanggan =" + pelanggan.getNama() +
+                "\n jumlah hari =" + jumlahHari +
+                "\n hotel = null" +
+                "\n kamar = null" +
+                "\n tipeKamar = null" +
+                "\n status ='" + final_status;
     }
     }
-    
-    /*
-    /**
-     * merupakan method untuk mencetak nilai
-     *
-    public void printData()
-    {
-        //digunakan untuk mencetak biaya
-        System.out.println("Nama Pelanggan : " + pelanggan.getNama());
-        System.out.println("Status Diproses: " + isDiproses);
-        System.out.println("Status Selesai : " + isSelesai);
-        System.out.println("Jumlah Hari    : " + jumlahHari);
-        System.out.println("Biaya Total    : " + biaya);
-    }
-    */
+
     
 

@@ -16,10 +16,11 @@ public class RoomController {
         return ROOM_DATABASE;
     }
 
-    @RequestMapping(value = "/room/{id_hotel}/{room_no}", method = RequestMethod.GET)
-    public Room getRoom(@PathVariable int id_hotel, String room_no)
+    @RequestMapping(value = "/room/{id_hotel}/{nomor_kamar}", method = RequestMethod.GET)
+    public Room getRoom(@PathVariable int id_hotel,
+                        @PathVariable String nomor_kamar)
     {
-        Room kamar = DatabaseRoom.getRoom(DatabaseHotel.getHotel(id_hotel),room_no);
+        Room kamar = DatabaseRoom.getRoom(DatabaseHotel.getHotel(id_hotel),nomor_kamar);
         return kamar;
     }
 }

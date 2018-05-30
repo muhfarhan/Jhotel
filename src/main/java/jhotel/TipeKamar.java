@@ -1,10 +1,10 @@
 package jhotel;
 
 /**
- * Enumeration class TipeKamar - write a description of the enum class here
+ * Enumeration class TipeKamar - berisi tipe-tipe kamar pada JHotel
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author muhammad farhan 1506673731
+ * @version 25-05-2018
  */
 public enum TipeKamar
 {

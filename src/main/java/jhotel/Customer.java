@@ -1,9 +1,9 @@
 package jhotel;
 /**
- * Class ini merupakan class Lokasi
+ * Class Customer untuk mengatur customer
  *
- * @author Muhammad Farhan
- * @version 01-03-2018
+ * @author Muhammad Farhan - 1506673731
+ * @version 2018.05.20
  */
 import java.text.*;
 import java.util.*;
@@ -19,11 +19,16 @@ public class Customer
     private String email;
     private Date dob;
     private String password;
-       
+
     /**
-     * merupakan method untuk menginisialisasi nilai dari 
-     * id dan nama
-     * @param nama
+     * Overloading Constructor for objects of class Customer.
+     *
+     * @param nama berisi nama Customer
+     * @param tahun berisi tahun
+     * @param bulan berisi bulan
+     * @param tanggal berisi tanggal
+     * @param email berisi Email
+     * @param password berisi password
      */
     public Customer(String nama, int tahun, int bulan, int tanggal, String email,String password)
     {
@@ -33,7 +38,15 @@ public class Customer
         this.email = email;
         this.password = password;
     }
-    
+
+    /**
+     * Overloading Constructor for objects of class Customer.
+     *
+     * @param nama berisi nama customer.
+     * @param dob berisi objek Date.
+     * @param email berisi Email
+     * @param password berisi password
+     */
     public Customer(String nama, Date dob, String email,String password)
     {
         this.nama = nama;
@@ -42,9 +55,11 @@ public class Customer
         this.email = email;
         this.password = password;
     }
-    
+
     /**
-     * merupakan method untuk mendapatkan nilai dari id
+     * Accessor for objects of class Customer
+     * untuk mendapatkan nilai id.
+     *
      * @return id
      */
     public int getID()
@@ -52,47 +67,71 @@ public class Customer
         return id;
     }
 
-    public String getPassword(){return password;}
-    
     /**
-     * merupakan method untuk mendapatkan nilai dari nama
-     * @return nama
+     * Accessor for objects of class Customer
+     * untuk mendapatkan password.
+     *
+     * @return password
+     */
+    public String getPassword(){return password;}
+
+    /**
+     * Accessor for objects of class Customer
+     * untuk mendapatkan nilai nama.
+     *
+     * @return nama berisi nama customer.
      */
     public String getNama()
     {
         return nama;
     }
-    
+
+    /**
+     * untuk mendapatikan nilai email.
+     *
+     * @return email berisi email.
+     */
     public String getEmail()
     {
         return email;
     }
-    
+
+    /**
+     * untuk mendapatkan nilai tanggal bertipe Date
+     *
+     * @return dob
+     */
     public Date getDOB()
     {
-        DateFormat form = new SimpleDateFormat("     'DOB : ' dd MMMM yyyy");
-        String out = form.format(dob);
-        System.out.print(out);
         return dob;
     }
-    
+
     /**
-     * merupakan method untuk mengatur nilai dari id
-     * @param id
+     * Mutator for objects of class Customer
+     * untuk menentukan nilai id.
+     *
+     * @param id berisi id.
      */
     public void setID(int id)
     {
         this.id = id;
     }
 
+    /**
+     * Menentukan password user
+     *
+     * @param password berisi password
+     */
     public void setPassword(String password)
         {
             this.password=password;
         }
-    
+
     /**
-     * merupakan method untuk mengatur nilai dari nama
-     * @param nama
+     * Mutator for objects of class Customer
+     * untuk menentukan nilai id.
+     *
+     * @param nama berisi nama.
      */
     public void setNama(String nama)
     {
@@ -102,9 +141,15 @@ public class Customer
          */
         this.nama = nama;
     }
-    
+
+    /**
+     * untuk menentukan nilai email.
+     *
+     * @param email berisi email.
+     */
     public void setEmail(String email)
     {
+        // untuk validasi email menyocokkan menggunakan pattern
         String pattern ="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
         Pattern pat = Pattern.compile(pattern);
         Matcher mat = pat.matcher(email);
@@ -114,14 +159,22 @@ public class Customer
             this.email = email;
         }
     }
-    
-    
+
+    /**
+     * untuk menentukan nilai tanggal
+     *
+     * @param dob objek Date
+     */
     public void setDOB(Date dob)
     {
         this.dob = dob;
     
     }
-    
+
+    /**
+     * untuk mencetak String pada objek Customer
+     *
+     */
     public String toString()
     {
         if(DatabasePesanan.getPesananAktif(this) != null)
@@ -129,7 +182,7 @@ public class Customer
             return "\nCustomer ID   : " + id +
                    "\nName          : " + nama +
                    "\nE-Mail        : " + email +
-                   "\nDate of Birth : " + dob +
+                   "\nDate of Birth : " + getDOB() +
                    "\nBooking order is in progress";        
         }
         else
@@ -137,21 +190,9 @@ public class Customer
             return "\nCustomer ID   : " + id +
                    "\nName          : " + nama +
                    "\nE-Mail        : " + email +
-                   "\nDate of Birth : " + dob;        
+                   "\nDate of Birth : " + getDOB();
         }
     }
-    
-    /*
-    /**
-     * merupakan method untuk mencetak data
-     *
-    public void printData()
-    {
-        //digunakan untuk mencetak nilai yang diinginkan
-        System.out.println("ID   : " + id);
-        System.out.println("Nama : " + nama);
-    }
-    */
 }
 
     

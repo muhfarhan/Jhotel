@@ -13,14 +13,6 @@ public class Lokasi
     private String deskripsiLokasi;
 
     /**
-     * Constructor for objects of class Lokasi
-     */ 
-    public Lokasi()
-    {
-        
-    }
-
-    /**
      * merupakan method untuk menginisialisasi nilai dari
      * x_coord, y_coord dan deskripsiLokal
      * @param x_coord
@@ -36,7 +28,8 @@ public class Lokasi
     
     /**
      * merupakan method untuk mengambil nilai dari x_coord
-     * return x_coord
+     *
+     * @return x_coord
      */
     public float getX()
     {
@@ -45,7 +38,8 @@ public class Lokasi
     
     /**
      * merupakan method untuk mengambil nilai dari y_coord
-     * return y_coord
+     *
+     * @return y_coord
      */
     public float getY()
     {
@@ -54,6 +48,7 @@ public class Lokasi
     
     /**
      * merupakan method untuk mengambil nilai dari deskripsi
+     *
      * @return deksripsiLokasi
      */
     public String getDeskripsi()
@@ -68,6 +63,7 @@ public class Lokasi
     
     /**
      * merupakan method untuk mengatur nilai x_coord
+     *
      * @param x_coord
      */
     public void setX(float x_coord)
@@ -77,6 +73,7 @@ public class Lokasi
     
     /**
      * merupakan method untuk mengatur nilai pada y_coord
+     *
      * @param y_coord
      */
     public void setY(float y_coord)
@@ -86,13 +83,19 @@ public class Lokasi
     
     /**
      * merupakan method untuk mengatur nilai dari deksripsi
+     *
      * @param deskripsi
      */
     public void setDeskripsi(String deskripsi)
     {
         deskripsiLokasi = deskripsi;
     }
-    
+
+    /**
+     * untuk mencetak String pada objek Lokasi
+     *
+     * @return string
+     */
     public String toString()
     {
         return "\nKoordinat X      : " + x_coord +

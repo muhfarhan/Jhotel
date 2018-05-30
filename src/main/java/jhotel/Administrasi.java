@@ -1,115 +1,95 @@
 package jhotel;
 /**
- * Write a description of class Administrasi here.
+ * Class Administrasi untuk melakukan kegiatan administrasi JHotel.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Muhammad Farhan - 1506673731
+ * @version 2018.05.20
  */
 public class Administrasi
 {
     /**
-     * Constructor for objects of class Administrasi
+     * Untuk memproses pemesanan kamar hotel.
+     *
+     * @param pesan berisi objek Pesanan
+     * @param kamar berisi objek Room
      */
     public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
-        /*pesan.setStatusSelesai(false);
-        pesan.setStatusDiproses(true);
-        pesan.setRoom(kamar);
-        */
-        if(kamar.getStatusKamar()== StatusKamar.Vacant )
+        if(pesan != null && kamar != null)
         {
-            kamar.setStatusKamar(StatusKamar.Vacant);
+            if(kamar.getStatusKamar()== StatusKamar.Vacant )
+            {
+            pesan.setStatusSelesai(false);
+            pesan.setStatusDiproses(true);
+            pesan.setRoom(kamar);
+
+            kamar.setStatusKamar(StatusKamar.Booked);
+            }
+            else
+                {
+                pesan.setStatusAktif(false);
+                }
         }
-        pesan.setStatusAktif(false);
     }
 
-    /*
-    public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
-    {
-        kamar.setStatusKamar(StatusKamar.Booked);
-    }*/
-
-    /*
-    public static void roomLepasPesanan(Room kamar)
-    {
-        kamar.setStatusKamar(StatusKamar.Vacant);
-    }*/
-    
+    /**
+     * untuk melakukan membatalkan pesanan hotel.
+     *
+     * @param kamar berisi objek Room
+     */
     public static void pesananDibatalkan(Room kamar)
     {
-        /* kamar.pesan.setStatusSelesai(false); 
-         * tidak bisa dilakukan karena pesan merupakan private
-         * object milik class Room*/
-        /**
-        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        */
+
         kamar.setStatusKamar(StatusKamar.Vacant);
 
-        /*
-        Pesanan wait = new Pesanan();
-        wait = kamar.getPesanan();
-        wait.setStatusSelesai(false);
-        wait.setStatusDiproses(false);
-        wait.setRoom(null);
-        kamar.set(wait);
-        
-        roomLepasPesanan(kamar);
-        kamar.getPesanan().getStatus(false);
-         */
     }
-    
+
+    /**
+     * untuk menandakan pesanan telah diselesaikan.
+     *
+     * @param kamar berisi objek Room
+     */
     public static void pesananSelesai(Room kamar)
     {
-        kamar.setStatusKamar(StatusKamar.Vacant);
-        /*
-        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        roomLepasPesanan(kamar);
-        //kamar.setStatusKamar(StatusKamar.Vacant);
 
-        Pesanan wait = new Pesanan();
-        wait = kamar.getPesanan();
-        wait.setStatusSelesai(true);
-        wait.setStatusDiproses(false);
-        wait.setRoom(null);
-        kamar.setPesanan(wait);
-        
-        roomLepasPesanan(kamar);
-        kamar.getPesanan().getStatus(false);
-         */
+        kamar.setStatusKamar(StatusKamar.Vacant);
     }
 
-    
+    /**
+     * untuk melakukan membatalkan pesanan hotel.
+     *
+     * @param pesan berisi objek Pesanan
+     */
     public static void pesananDibatalkan(Pesanan pesan)
     {
+        pesan.getRoom().setStatusKamar(StatusKamar.Vacant);
 
-        roomLepasPesanan(pesan.getRoom());
-        /*
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
         pesan.setRoom(null);
-        */
     }
-    
+
+    /**
+     * untuk menandakan pesanan telah diselesaikan.
+     *
+     * @param pesan berisi objek Pesanan
+     */
     public static void pesananSelesai(Pesanan pesan)
     {
+        pesan.getRoom().setStatusKamar(StatusKamar.Vacant);
 
-        roomLepasPesanan(pesan.getRoom());
-        /*
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
         pesan.setRoom(null);
-        */
-    }
-
-    public static void roomLepasPesanan(Room kamar){
-        kamar.setStatusKamar(StatusKamar.Vacant);
     }
 }

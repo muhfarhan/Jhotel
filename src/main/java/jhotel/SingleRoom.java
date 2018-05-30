@@ -1,10 +1,10 @@
 package jhotel;
 
 /**
- * Write a description of class SingleRoom here.
+ * Class SingleRoom untuk tipe room single.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author muhammad farhan 1506673731
+ * @version 25-05-2018
  */
 public class SingleRoom extends Room
 {
@@ -13,21 +13,34 @@ public class SingleRoom extends Room
     
     /**
      * Constructor for objects of class SingleRoom
+     *
+     * @param hotel object hotel
+     * @param nomor_kamar berisi nomor kamar
      */
     public SingleRoom(Hotel hotel, String nomor_kamar)
     {
         super(hotel,nomor_kamar);
+        setDailyTariff(500000);
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * mendapatkan nilai tipe kamar
+     * \
+     * @return TIPE_KAMAR
      */
     public TipeKamar getTipeKamar()
     {
         //return ke single
         return TIPE_KAMAR;
+    }
+
+    /**
+     * menentukan nilai daily tarif
+     *
+     * @param dailytariff nilai daily tariff
+     */
+    public void setDailyTariff(double dailytariff)
+    {
+        dailyTariff = dailytariff;
     }
 }
